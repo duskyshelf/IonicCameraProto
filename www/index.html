@@ -31,10 +31,12 @@
       <button class="button button-energized" ng-click="addImage(1)">
         Add Image 2
       </button><br><br>
-      <ion-scroll>
-        <img ng-repeat="image in images" ng-src="{{image.url}}" height="200px">
-        {{images}}
-      </ion-scroll>
+      <button class="button button-energized" ng-click="addImage(3)">
+        Add Image 4
+      </button><br><br>
+      <img ng-src="img/pigeonplaceholder.gif">
+        <img ng-repeat="image in placeheldgallery" ng-src="{{image.url}}" height="50px">
+        {{placeheldgallery}}
     </ion-view>
   </body>
 </html>
