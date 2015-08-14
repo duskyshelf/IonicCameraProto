@@ -1,7 +1,7 @@
 angular.module('starter', ['ionic', 'ngCordova'])
 
 .controller('imageController', function($scope, $cordovaCamera, $cordovaFile) {
-  $scope.images = [];
+  $scope.images = JSON.parse(window.localStorage.images || '[]');
 
   $scope.addImage = function(photoIndex) {
 
@@ -16,6 +16,8 @@ angular.module('starter', ['ionic', 'ngCordova'])
     $cordovaCamera.getPicture(options).then(function(imageData) {
 
     $scope.images[photoIndex] = {url: imageData};
+
+    window.localStorage.images = JSON.stringify($scope.images);
 
 
 
